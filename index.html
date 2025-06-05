@@ -2,109 +2,136 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Horizon</title>
+  <title>Horizon - Catatan Perjalanan</title>
   <style>
     :root {
-      --bg-body: #F2ECE0;       /* Warna cream harmonis untuk latar keseluruhan */
-      --bg-page: #FFF8E1;       /* Warna kertas klasik */
-      --text-color: #333;
-      --font-family: "Garamond", "Palatino Linotype", "Book Antiqua", serif;
-      --page-max-width: 800px;   /* Lebar halaman ditingkatkan */
-      --page-padding: 40px;
-      --title-font-size: 24px;
-      --title-margin-bottom: 20px;
+      --cream: #fdf6e3;
+      --brown: #3e2f1c;
+      --ink: #2b2b2b;
+      --accent: #a1866f;
     }
-    
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    
+
     body {
-      font-family: var(--font-family);
-      background-color: var(--bg-body);
+      background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      background-color: var(--cream);
+      font-family: 'Georgia', serif;
+      color: var(--ink);
+      margin: 0;
+      padding: 60px 0;
       display: flex;
       justify-content: center;
-      align-items: center;
-      padding: 60px; /* Padding diperbesar agar tidak terlalu "mepet" */
-      min-height: 100vh;
+      align-items: flex-start;
     }
-    
-    .book-page {
+
+    .book {
+      background-color: #fffdf7;
       width: 90%;
-      max-width: var(--page-max-width);
-      background-color: var(--bg-page);
-      padding: var(--page-padding);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      border-radius: 10px;
-      font-size: 16px;
-      line-height: 1.8;
-      color: var(--text-color);
-      border: 1px solid #e7e3cf;
-      /* Background texture yang bersahaja untuk menambah kompleksitas visual */
-      background-image: url('https://www.transparenttextures.com/patterns/old-mathematics.png');
+      max-width: 840px;
+      padding: 60px 40px;
+      box-shadow: 0 0 60px rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+      border: 1px solid #e3dccb;
+      position: relative;
+      overflow: hidden;
+      line-height: 1.9;
     }
-    
-    .title {
-      font-size: var(--title-font-size);
-      font-weight: bold;
-      text-align: left;
-      margin-bottom: var(--title-margin-bottom);
-      padding-bottom: 10px;
-      border-bottom: 2px solid #e7e3cf;
+
+    .book:before, .book:after {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 30px;
+      background: linear-gradient(to right, rgba(0,0,0,0.05), transparent);
+      z-index: -1;
     }
-    
-    .book-page p {
-      margin-bottom: 16px;
+
+    .book:before {
+      left: 0;
+      transform: rotateY(180deg);
+    }
+
+    .book:after {
+      right: 0;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Palatino Linotype', 'Book Antiqua', serif;
+      font-size: 28px;
+      color: var(--brown);
+      margin-bottom: 24px;
+      border-bottom: 1px dashed var(--accent);
+      padding-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 20px;
       text-align: justify;
     }
-    
-    .book-page mark {
-      background-color: #FFFACD;
-      padding: 0 2px;
+
+    mark {
+      background-color: #fff2a8;
+      padding: 1px 4px;
       font-weight: bold;
     }
-    
-    a {
-      color: #336699;
+
+    .signature {
+      margin-top: 40px;
+      text-align: right;
+      font-style: italic;
+      font-size: 15px;
+      color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 12px;
+      color: #888;
+    }
+
+    footer a {
+      color: var(--brown);
       text-decoration: none;
     }
-    
-    a:hover {
+
+    footer a:hover {
       text-decoration: underline;
     }
-    
+
     @media screen and (max-width: 768px) {
-      .book-page {
-        width: 95%;
-        font-size: 15px;
+      .book {
+        padding: 40px 20px;
+      }
+
+      h1 {
+        font-size: 24px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="book-page">
-    <div class="title">Horizon</div>
+  <div class="book">
+    <h1>Horizon</h1>
     <p>
-      Aku sangat bersyukur, karena hingga saat ini masih bisa menoleh ke belakang dan menyadari bahwa setiap langkah yang telah kutempuh membentuk pemahaman baru: hidup memang seperti ini adanya. <mark>Saat kita mampu mensyukuri segala hal, maka semuanya akan terasa lebih ringan dan bermakna.</mark>
+      Aku sangat bersyukur, karena hingga saat ini masih bisa menoleh ke belakang dan menyadari bahwa setiap langkah yang telah kutempuh membentuk pemahaman baru: hidup memang seperti ini adanya. 
+      <mark>Saat kita mampu mensyukuri segala hal, maka semuanya akan terasa lebih ringan dan bermakna.</mark>
     </p>
     <p>
       Semoga ke depan, apa pun rintangan yang menghadang, aku tetap mampu bertahan hingga akhir. Hingga suatu saat, di persinggahan yang baru, aku tak lagi melangkah sendirian. Ada kebersamaan yang mengiringi, perjalanan yang terus berlanjut, membawa cerita yang berbeda.
     </p>
     <p>
-      Menentukan tujuan baru dan terus melangkah bukan hanya tentang perjalanan diri, tetapi juga tentang setiap jejak kecil yang kutinggalkan hal-hal sederhana yang mungkin tak berarti banyak, namun menjadi bagian dari ingatan mereka yang pernah bertemu denganku. Di mana pun aku berada, setiap interaksi, setiap kebaikan kecil akan tersimpan dalam memori orang-orang yang kutemui.
+      Menentukan tujuan baru dan terus melangkah bukan hanya tentang perjalanan diri, tetapi juga tentang setiap jejak kecil yang kutinggalkan — hal-hal sederhana yang mungkin tak berarti banyak, namun menjadi bagian dari ingatan mereka yang pernah bertemu denganku.
     </p>
     <p>
       Dan saat perjalanan ini mencapai akhirnya, ketika langkah terakhir telah tiba, aku berharap semua yang telah kulalui terasa cukup. Dan sungguh berarti.
     </p>
-    
-    <hr style="width: 60%; margin: 20px auto; border: 0.5px solid #ddd;">
-<footer style="text-align: center; padding: 12px; font-size: 12px; color: #777; opacity: 0.85; transition: opacity 0.3s;">
-   posted by 
-    <a href="https://github.com/Cflavianus" style="text-decoration: none; color: #555; font-weight: normal;"
-    onmouseover="this.style.opacity=0.6;" onmouseout="this.style.opacity=1;">@flavi</a>
-</footer>
+
+    <div class="signature">— Flavianus</div>
+
+    <footer>
+      Dibuat dengan cinta • <a href="https://github.com/Cflavianus">@flavi</a>
+    </footer>
   </div>
 </body>
 </html>
